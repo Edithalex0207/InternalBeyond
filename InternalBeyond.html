@@ -467,25 +467,18 @@ body.theme-infernal .envelope-from{color:rgba(200,214,238,0.9)}
 body.theme-infernal .envelope-date{color:rgba(150,172,210,0.85)}
 
 .envelope-seal{position:absolute;left:50%;top:64%;transform:translate(-50%,-50%);z-index:3;width:56px;height:56px;cursor:pointer;
-  border-radius:50% 50% 49% 51% / 50% 50% 50% 50%;
-  background:radial-gradient(circle at 37% 30%,#b4c8e8 0%,#86a4cc 30%,#5a7aa8 60%,#3d5a86 84%,#2c4068 100%);
-  border:1px solid rgba(120,150,196,0.5);
-  box-shadow:0 3px 6px rgba(14,28,58,0.5),0 1px 2px rgba(14,28,58,0.4),inset 0 2px 5px rgba(255,255,255,0.32),inset 0 -5px 10px rgba(22,38,70,0.55),inset 2px 1px 6px rgba(255,255,255,0.14);
-  transition:transform 0.3s var(--transition),box-shadow 0.3s var(--transition);display:flex;align-items:center;justify-content:center}
-.envelope-seal::before{content:'';position:absolute;inset:3.5px;border-radius:inherit;pointer-events:none;
-  border:1px solid rgba(255,255,255,0.14);background:radial-gradient(circle at 50% 120%,rgba(16,28,56,0.4),transparent 60%)}
-.envelope-seal::after{content:'';position:absolute;top:12%;left:19%;width:36%;height:26%;border-radius:50%;pointer-events:none;
-  background:radial-gradient(ellipse at center,rgba(255,255,255,0.5),rgba(255,255,255,0) 72%)}
-.envelope-seal:hover{transform:translate(-50%,-50%) scale(1.08);box-shadow:0 5px 11px rgba(14,28,58,0.55),0 1px 3px rgba(14,28,58,0.42),inset 0 2px 5px rgba(255,255,255,0.32),inset 0 -5px 10px rgba(22,38,70,0.55),inset 2px 1px 6px rgba(255,255,255,0.14)}
+  --wx-lt:#86a4cc;--wx:#5a7aa8;--wx-dk:#2c4068;--wx-emb:rgba(232,242,255,0.92);--wx-sh:rgba(10,20,44,0.45);--wx-sh2:rgba(10,20,44,0.4);
+  filter:drop-shadow(0 2.2px 2px var(--wx-sh)) drop-shadow(0 0.6px 0.6px var(--wx-sh2));
+  transition:transform 0.3s cubic-bezier(0.4,0,0.2,1),filter 0.3s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:center;justify-content:center}
+.envelope-seal::before{content:'';position:absolute;inset:-10%;z-index:0;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cdefs%3E%3CradialGradient id='g' cx='60' cy='60' r='56' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='.55' stop-color='%23d2d2d2'/%3E%3Cstop offset='.8' stop-color='%23adadad'/%3E%3Cstop offset='1' stop-color='%235a5a5a'/%3E%3C/radialGradient%3E%3Cfilter id='f' x='0' y='0' width='120' height='120' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeColorMatrix type='luminanceToAlpha' result='a'/%3E%3CfeGaussianBlur in='a' stdDeviation='1.6' result='h'/%3E%3CfeDiffuseLighting in='h' surfaceScale='4' diffuseConstant='1' result='d'%3E%3CfeDistantLight azimuth='225' elevation='52'/%3E%3C/feDiffuseLighting%3E%3CfeSpecularLighting in='h' surfaceScale='4' specularConstant='1' specularExponent='44' lighting-color='%23fff' result='s'%3E%3CfeDistantLight azimuth='225' elevation='52'/%3E%3C/feSpecularLighting%3E%3CfeColorMatrix in='d' type='matrix' values='0 0 0 0 .02 0 0 0 0 .03 0 0 0 0 .07 -1.15 0 0 0 .906' result='sh'/%3E%3CfeColorMatrix in='d' type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 .95 0 0 0 -.745' result='hl'/%3E%3CfeMerge result='m'%3E%3CfeMergeNode in='sh'/%3E%3CfeMergeNode in='hl'/%3E%3CfeMergeNode in='s'/%3E%3C/feMerge%3E%3CfeComposite in='m' in2='SourceAlpha' operator='in'/%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23f)'%3E%3Cpath d='M60 8C66.9 8.3 75.7 12.3 81.7 14.4C87.8 16.6 91.6 16.6 96.5 20.9C101.4 25.1 108.6 33.8 111.2 39.8C113.7 45.9 113 50.5 111.9 57.3C110.9 64.1 107.7 74.1 105 80.5C102.4 87 99.9 91.4 96.1 96.1C92.2 100.7 88.4 105.7 82 108.2C75.5 110.8 64 111.9 57.3 111.4C50.6 111 47.7 108.4 42 105.6C36.3 102.8 28.2 98.2 23.1 94.4C17.9 90.7 13.9 89.1 11.3 83.2C8.7 77.4 7 66.4 7.5 59.1C8 51.8 11.7 44.6 14.5 39.3C17.3 33.9 20.2 31.3 24.5 26.9C28.9 22.5 34.6 16 40.5 12.9C46.4 9.7 53.1 7.7 60 8Z' fill='url(%23g)'/%3E%3Ccircle cx='60' cy='60' r='37' fill='%23868686'/%3E%3Ccircle cx='60' cy='60' r='33.2' fill='none' stroke='%237a7a7a' stroke-width='1.1'/%3E%3Ccircle cx='60' cy='60' r='39.4' fill='none' stroke='%23dcdcdc' stroke-width='4.6'/%3E%3C/g%3E%3C/svg%3E") center/100% 100% no-repeat,radial-gradient(circle at 42% 38%,var(--wx-lt) 0%,var(--wx) 52%,var(--wx-dk) 100%);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M60 8C66.9 8.3 75.7 12.3 81.7 14.4C87.8 16.6 91.6 16.6 96.5 20.9C101.4 25.1 108.6 33.8 111.2 39.8C113.7 45.9 113 50.5 111.9 57.3C110.9 64.1 107.7 74.1 105 80.5C102.4 87 99.9 91.4 96.1 96.1C92.2 100.7 88.4 105.7 82 108.2C75.5 110.8 64 111.9 57.3 111.4C50.6 111 47.7 108.4 42 105.6C36.3 102.8 28.2 98.2 23.1 94.4C17.9 90.7 13.9 89.1 11.3 83.2C8.7 77.4 7 66.4 7.5 59.1C8 51.8 11.7 44.6 14.5 39.3C17.3 33.9 20.2 31.3 24.5 26.9C28.9 22.5 34.6 16 40.5 12.9C46.4 9.7 53.1 7.7 60 8Z'/%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M60 8C66.9 8.3 75.7 12.3 81.7 14.4C87.8 16.6 91.6 16.6 96.5 20.9C101.4 25.1 108.6 33.8 111.2 39.8C113.7 45.9 113 50.5 111.9 57.3C110.9 64.1 107.7 74.1 105 80.5C102.4 87 99.9 91.4 96.1 96.1C92.2 100.7 88.4 105.7 82 108.2C75.5 110.8 64 111.9 57.3 111.4C50.6 111 47.7 108.4 42 105.6C36.3 102.8 28.2 98.2 23.1 94.4C17.9 90.7 13.9 89.1 11.3 83.2C8.7 77.4 7 66.4 7.5 59.1C8 51.8 11.7 44.6 14.5 39.3C17.3 33.9 20.2 31.3 24.5 26.9C28.9 22.5 34.6 16 40.5 12.9C46.4 9.7 53.1 7.7 60 8Z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.envelope-seal::after{content:none}
+.envelope-seal:hover{transform:translate(-50%,-50%) scale(1.06);filter:drop-shadow(0 3.4px 3px var(--wx-sh)) drop-shadow(0 1px 1px var(--wx-sh2))}
 .envelope-seal:active{transform:translate(-50%,-50%) scale(0.96)}
-.seal-emblem-svg{position:relative;z-index:1;width:64%;height:64%;pointer-events:none;filter:drop-shadow(0 1px 0.5px rgba(10,20,44,0.6))}
-.seal-emblem{stroke:rgba(232,242,255,0.92)}
-body:not(.theme-infernal) .envelope-seal{
-  background:radial-gradient(circle at 37% 30%,#c4d6f0 0%,#9bb6dc 30%,#6f93c2 60%,#4f74a8 84%,#3c5e90 100%);
-  border-color:rgba(150,182,224,0.6);
-  box-shadow:0 3px 6px rgba(50,90,150,0.4),0 1px 2px rgba(50,90,150,0.3),inset 0 2px 5px rgba(255,255,255,0.5),inset 0 -5px 10px rgba(56,92,148,0.5),inset 2px 1px 6px rgba(255,255,255,0.22)}
-body:not(.theme-infernal) .envelope-seal:hover{box-shadow:0 5px 11px rgba(50,90,150,0.46),0 1px 3px rgba(50,90,150,0.32),inset 0 2px 5px rgba(255,255,255,0.5),inset 0 -5px 10px rgba(56,92,148,0.5),inset 2px 1px 6px rgba(255,255,255,0.22)}
-body:not(.theme-infernal) .seal-emblem{stroke:rgba(245,250,255,0.95)}
+.seal-emblem-svg{position:relative;z-index:1;width:64%;height:64%;pointer-events:none;filter:drop-shadow(0.35px 0.75px 0.35px rgba(6,14,32,0.6)) drop-shadow(-0.3px -0.4px 0.2px rgba(255,255,255,0.28))}
+.seal-emblem{stroke:var(--wx-emb)}
+body:not(.theme-infernal) .envelope-seal{--wx-lt:#9bb6dc;--wx:#6f93c2;--wx-dk:#3c5e90;--wx-emb:rgba(245,250,255,0.95);--wx-sh:rgba(40,80,140,0.36);--wx-sh2:rgba(40,80,140,0.32)}
 .envelope-bottom{height:0}
 /* Expanded letter — styled like a sheet of letter paper (stationery) */
 @keyframes letterOpen{0%{opacity:0;transform:translateY(-10px) scale(0.98)}100%{opacity:1;transform:none}}
@@ -7372,14 +7365,14 @@ i would like the room to be enough.
           <p><strong>待审核</strong>：装上这一版之后 TA 新写的记忆，卡片上带「待审核」小签。展开卡片点「标为已审」，或者你改过它，小签就没了。状态筛选里可以只看待审核的。记忆卡展开后也能直接「标为过时」或取消。</p>
           <p><strong>回望标 Gazing Back</strong>：Chat 全屏页里想起了记忆的回复，气泡下沿有「Gazing Back N」；点开就地看这一轮的清单，可标「过时」。</p>
           <p><strong>时间轴</strong>：左侧以行星形态按日期展示记忆分布，点击可定位到对应卡片。置顶记忆以金色行星显示，顶部有快速定位按钮可跳至置顶区域。</p>
-          <p><strong>记忆卡片</strong>：「我们之间的记忆。」Memories。展示标题、概括和创建者。点击展开可查看完整内容、情感坐标数值、激活次数，以及编辑、置顶、标记已解决、删除等操作。</p>
+          <p><strong>记忆卡片</strong>：「我们之间的记忆。」Memories。展示标题、概括和创建者。点击展开可查看完整内容、情感坐标数值，以及编辑、置顶、标记已解决、删除等操作。</p>
           <p><strong>创建</strong>：手动点「+ 新记忆」，或通过 Chat / Blog / Letters 中的「生成记忆」按钮让 AI 自动生成。每条记忆需设置标题、内容、领域、情感坐标（Valence 积极/消极、Arousal 炽烈/平静）、重要性（1–10）等参数。</p>
           <p><strong>置顶</strong>：最多 20 条。置顶的记忆每一轮都会给 TA，在所有排序模式下排在列表最前面，以金色图钉标识，与普通记忆之间由分隔线区分。一对一聊天里置顶放进系统提示，随提示缓存一起命中。增删或改动置顶的记忆后，缓存重建一次。</p>
           <p><strong>可见性</strong>：每条记忆可设为全部公开、仅指定可见、排除指定或完全私密。私密记忆不注入任何对话。群聊中仅注入公开记忆。</p>
           <p><strong>写一句话</strong>：AI 编写的记忆可请 TA 额外写一句话，以引言形式展示在卡片内。</p>
           <p><strong>跨模块联动</strong>：Chat、Letters、Blog 评论、Tarot、Tea、Story 在调用 API 时都会自动注入相关记忆。</p>
           <p><strong>星图上限</strong>：最多显示 500 颗，超出后不活跃的星暂不绘制（置顶与档案除外），右上角标注数量。记忆本身不受影响。</p>
-          <p><strong>记忆机制</strong>：每条记忆带有情感坐标、重要性和衰减权重。系统使用改进版的艾宾浩斯遗忘曲线计算记忆活跃度：不活跃的记忆权重随时间指数衰减，标记为「已解决」的衰减速度更快。高情绪强度（Arousal）的记忆衰减更慢，被多次激活的记忆也会获得强化加成。</p>
+          <p><strong>记忆机制</strong>：每条记忆带有情感坐标、重要性和衰减权重。系统使用改进版的艾宾浩斯遗忘曲线计算记忆活跃度：不活跃的记忆权重随时间指数衰减，标记为「已解决」的衰减速度更快。高情绪强度（Arousal）的记忆衰减更慢。</p>
           <p>对话时，系统只把和你这句话相关的记忆交给 TA：相关的才算，最多 3 条给全文，没有相关的就一条不给。置顶的记忆每次都带上；标了过时的平时不带，说到以前的事才放行。TA 读到记忆不会改变它的活力。想让它按意思找（换个说法也能想起），到 API 设置的记忆设置里开「向量检索」。某位 TA 不想让它想起记忆，在这位 TA 的 API 设置里关掉「想起记忆」。</p>
           <p><strong>召回规则</strong>：TA 回话前按以下规则挑选记忆。</p>
           <p>①<strong>泛词标签不单独放行</strong>：只是「喜欢、工作、心情、信任」这类日常泛词标签对上了，不足以让一条记忆过门，「差一点」里标「泛词标签」。</p>
@@ -24501,7 +24494,7 @@ async function renderMemories(){
           +'<span class="mem-vis-badge">'+visLabels[m.visibility||'public']+'</span>'
         +'</div>'
         +'<div class="mem-card-content">'+esc(m.content||'')+'</div>'
-        +'<div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:12px;margin-top:6px">V:'+(m.valence!=null?m.valence:0.5)+' A:'+(m.arousal!=null?m.arousal:0.3)+' \u00B7 '+(m.activationCount||0)+'次激活</div>'
+        +'<div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:12px;margin-top:6px">V:'+(m.valence!=null?m.valence:0.5)+' A:'+(m.arousal!=null?m.arousal:0.3)+'</div>'
         +'<div class="mem-card-actions">'
           +'<button class="btn" onclick="event.stopPropagation();toggleMemPin(\''+m.id+'\')">'+(m.pinned?'取消置顶':'置顶')+'</button>'
           +'<button class="btn" onclick="event.stopPropagation();toggleMemResolved(\''+m.id+'\')">'+(m.resolved?'未解决':'解决')+'</button>'
